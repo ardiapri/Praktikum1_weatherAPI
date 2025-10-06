@@ -96,4 +96,20 @@
     <div class="weather-info">Kelembapan: <span id="kelembapan"></span></div>
   </div>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    const apiKey = "e0b6d496e7264df08d140507250610";
+
+    function tampilkanCuaca(kota) {
+      const urlapi = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${kota}&aqi=no`;
+
+      $.ajax({
+        url: urlapi,
+        type: 'GET',
+        success: function(data) {
+          console.log(data);
+
+          
