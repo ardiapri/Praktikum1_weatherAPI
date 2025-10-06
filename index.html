@@ -112,4 +112,41 @@
         success: function(data) {
           console.log(data);
 
-          
+          // Ambil elemen
+          document.getElementById("lokasi").innerHTML = `${data.location.name}, ${data.location.region} <br> ${data.location.country}`;
+          document.getElementById("cuaca").innerHTML = data.current.condition.text;
+          document.getElementById("suhu").innerHTML = data.current.temp_c + "°C";
+          document.getElementById("kelembapan").innerHTML = data.current.humidity + "%";
+          document.getElementById("ikon").src = "https:" + data.current.condition.icon;
+
+          // Data tambahan
+          document.getElementById("negara").innerHTML = data.location.country;
+          document.getElementById("provinsi").innerHTML = data.location.region;
+          document.getElementById("kecamatan").innerHTML = data.location.name;
+          document.getElementById("longitude").innerHTML = data.location.lon;
+          document.getElementById("latitude").innerHTML = data.location.lat;
+        },
+        error: function() {
+          document.getElementById("lokasi").innerHTML = "❌ Kota tidak ditemukan!";
+          document.getElementById("cuaca").innerHTML = "";
+          document.getElementById("suhu").innerHTML = "";
+          document.getElementById("kelembapan").innerHTML = "";
+          document.getElementById("ikon").src = "";
+          document.getElementById("negara").innerHTML = "-";
+          document.getElementById("provinsi").innerHTML = "-";
+          document.getElementById("kecamatan").innerHTML = "-";
+          document.getElementById("longitude").innerHTML = "-";
+          document.getElementById("latitude").innerHTML = "-";
+        }
+      });
+    }
+
+    function cariCuaca() {
+      const kota = document.getElementById("kotaInput").value;
+      if (kota.trim() !== "") {
+        tampilkanCuaca(kota);
+      }
+    }
+  </script>
+</body>
+</html>
