@@ -73,4 +73,27 @@
       font-weight: bold;
       margin: 10px 0;
     }
+  </style>
+</head>
+<body>
+  <div class="search-box">
+    <input type="text" id="kotaInput" placeholder="Masukkan nama kota...">
+    <button onclick="cariCuaca()">Cari</button>
+  </div>
+
+  <div class="weather-card">
+    <h2 id="lokasi">Masukkan kota untuk melihat cuaca</h2>
+    <img id="ikon" src="" alt="Weather Icon">
+    <div class="weather-info" id="cuaca"></div>
+    <div class="temp" id="suhu"></div>
+
+    <!-- Tambahan informasi detail -->
+    <div class="weather-info">Negara: <span id="negara"></span></div>
+    <div class="weather-info">Provinsi: <span id="provinsi"></span></div>
+    <div class="weather-info">Kecamatan/Kota: <span id="kecamatan"></span></div>
+    <div class="weather-info">Longitude: <span id="longitude"></span></div>
+    <div class="weather-info">Latitude: <span id="latitude"></span></div>
+    <div class="weather-info">Kelembapan: <span id="kelembapan"></span></div>
+  </div>
+
   
